@@ -1,0 +1,13 @@
+@import url(//db.onlinewebfonts.com/c/911ddcf4b9a6e114b2f380edb743d1a2?family=UniversityW02-Roman);
+
+html .brand-logo {
+    font-family: 'University Roman';
+}
+
+
+.center-column {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}

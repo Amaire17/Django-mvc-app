@@ -1,0 +1,47 @@
+
+{% extends "tasks\\base.html" %}
+
+{% load static %}
+
+
+{% block content %} 
+<div class="center-column">
+
+	<form class="col s12" method="POST" action="/">
+	<div class="col-3" width="100px">{% csrf_token %}
+		{{form.title}} </div>
+		<input class="btn btn-info" type="submit" name="Create Task" >
+	</form>
+
+	<div class="todo-list">
+
+	{% for task in tasks %}
+		<div class="item-row">
+			<a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
+			<a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+		
+			{% if task.complete == True %}
+			<strike>{{task}}</strike>
+			{% else %}
+			
+			
+			<span> {{task}} </span>
+			
+			{% endif %}
+		</div>
+	
+	{% endfor %}
+	</div>
+</div>
+
+
+
+
+
+    <script type="text/javascript" src="{% static 'alfmaire/js/materialize.min.js' %}"></script>
+    
+</body>
+</html>
+
+
+{% endblock %}
